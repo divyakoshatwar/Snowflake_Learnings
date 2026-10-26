@@ -1,0 +1,993 @@
+
+
+============================== 04:04:27.611898 | 2b42db71-5ffa-49a5-83cc-4193f8da0afb ==============================
+[0m04:04:27.611898 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m04:04:27.612898 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/tmp/dbt/logs', 'version_check': 'True', 'profiles_dir': '/tmp/dbt_effective_profiles_gd655ult', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt ', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'False'}
+[0m04:04:27.819391 [info ] [Dummy-1   ]: State adapter: dbt-state v0.0.0 is disabled
+[0m04:04:27.916004 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m04:04:28.450056 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m04:04:28.451829 [info ] [Dummy-1   ]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m04:04:29.859692 [info ] [Dummy-1   ]: Setting up file format and S3 stage in "SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT"...
+[0m04:04:29.860721 [info ] [Dummy-1   ]: Creating and loading raw table: country
+[0m04:04:29.861526 [info ] [Dummy-1   ]: Creating and loading raw table: franchise
+[0m04:04:29.862261 [info ] [Dummy-1   ]: Creating and loading raw table: location
+[0m04:04:29.863057 [info ] [Dummy-1   ]: Creating and loading raw table: menu
+[0m04:04:29.863853 [info ] [Dummy-1   ]: Creating and loading raw table: truck
+[0m04:04:29.864585 [info ] [Dummy-1   ]: Creating and loading raw table: order_header
+[0m04:04:29.865406 [info ] [Dummy-1   ]: Creating and loading raw table: order_detail
+[0m04:04:29.866074 [info ] [Dummy-1   ]: Creating and loading raw table: customer_loyalty
+[0m04:04:30.054580 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m04:04:30.056985 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m04:04:30.092776 [info ] [Dummy-1   ]: Found 11 models, 1 operation, 478 macros
+[0m04:04:30.095443 [info ] [Dummy-1   ]: 
+[0m04:04:30.096090 [info ] [Dummy-1   ]: Concurrency: 8 threads (target='dev')
+[0m04:04:30.096579 [info ] [Dummy-1   ]: 
+[0m04:04:30.097332 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m04:04:30.104457 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_SNOWFLAKE_LEARNING_DB_TASTY_BYTES_DBT'
+[0m04:04:30.189123 [debug] [ThreadPool]: Using snowflake connection "list_SNOWFLAKE_LEARNING_DB_TASTY_BYTES_DBT"
+[0m04:04:30.189738 [debug] [ThreadPool]: On list_SNOWFLAKE_LEARNING_DB_TASTY_BYTES_DBT: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_SNOWFLAKE_LEARNING_DB_TASTY_BYTES_DBT"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m04:04:30.190240 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m04:04:30.608022 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.418 seconds
+[0m04:04:30.613229 [debug] [ThreadPool]: Using snowflake connection "list_SNOWFLAKE_LEARNING_DB_TASTY_BYTES_DBT"
+[0m04:04:30.613873 [debug] [ThreadPool]: On list_SNOWFLAKE_LEARNING_DB_TASTY_BYTES_DBT: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_SNOWFLAKE_LEARNING_DB_TASTY_BYTES_DBT"} */
+show objects in SNOWFLAKE_LEARNING_DB.TASTY_BYTES_DBT
+    limit 10000
+    
+;
+[0m04:04:30.672441 [debug] [ThreadPool]: Snowflake adapter: Snowflake query id: 01c7fc98-020c-8e63-0033-b5430021a076
+[0m04:04:30.673126 [debug] [ThreadPool]: Snowflake adapter: Snowflake error: 002043 (02000): SQL compilation error:
+Object does not exist, or operation cannot be performed.
+[0m04:04:30.673916 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: macro list_relations_without_caching
+[0m04:04:30.674464 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m04:04:30.692756 [debug] [Thread-2 (]: Began running node model.tasty_bytes.raw_customer_customer_loyalty
+[0m04:04:30.696688 [debug] [Thread-7 (]: Began running node model.tasty_bytes.raw_pos_order_detail
+[0m04:04:30.694343 [debug] [Thread-4 (]: Began running node model.tasty_bytes.raw_pos_franchise
+[0m04:04:30.695324 [debug] [Thread-5 (]: Began running node model.tasty_bytes.raw_pos_location
+[0m04:04:30.695996 [debug] [Thread-6 (]: Began running node model.tasty_bytes.raw_pos_menu
+[0m04:04:30.693595 [debug] [Thread-3 (]: Began running node model.tasty_bytes.raw_pos_country
+[0m04:04:30.697419 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_SNOWFLAKE_LEARNING_DB_TASTY_BYTES_DBT, now model.tasty_bytes.raw_customer_customer_loyalty)
+[0m04:04:30.698047 [debug] [Thread-8 (]: Began running node model.tasty_bytes.raw_pos_order_header
+[0m04:04:30.698693 [debug] [Thread-9 (]: Began running node model.tasty_bytes.raw_pos_truck
+[0m04:04:30.699690 [debug] [Thread-7 (]: Acquiring new snowflake connection 'model.tasty_bytes.raw_pos_order_detail'
+[0m04:04:30.700518 [debug] [Thread-4 (]: Acquiring new snowflake connection 'model.tasty_bytes.raw_pos_franchise'
+[0m04:04:30.701338 [debug] [Thread-5 (]: Acquiring new snowflake connection 'model.tasty_bytes.raw_pos_location'
+[0m04:04:30.702079 [debug] [Thread-6 (]: Acquiring new snowflake connection 'model.tasty_bytes.raw_pos_menu'
+[0m04:04:30.702824 [debug] [Thread-3 (]: Acquiring new snowflake connection 'model.tasty_bytes.raw_pos_country'
+[0m04:04:30.703536 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes.raw_customer_customer_loyalty
+[0m04:04:30.704343 [debug] [Thread-8 (]: Acquiring new snowflake connection 'model.tasty_bytes.raw_pos_order_header'
+[0m04:04:30.705072 [debug] [Thread-9 (]: Acquiring new snowflake connection 'model.tasty_bytes.raw_pos_truck'
+[0m04:04:30.705650 [debug] [Thread-7 (]: Began compiling node model.tasty_bytes.raw_pos_order_detail
+[0m04:04:30.706214 [debug] [Thread-4 (]: Began compiling node model.tasty_bytes.raw_pos_franchise
+[0m04:04:30.706790 [debug] [Thread-5 (]: Began compiling node model.tasty_bytes.raw_pos_location
+[0m04:04:30.707506 [debug] [Thread-6 (]: Began compiling node model.tasty_bytes.raw_pos_menu
+[0m04:04:30.708056 [debug] [Thread-3 (]: Began compiling node model.tasty_bytes.raw_pos_country
+[0m04:04:30.717565 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes.raw_customer_customer_loyalty"
+[0m04:04:30.718291 [debug] [Thread-8 (]: Began compiling node model.tasty_bytes.raw_pos_order_header
+[0m04:04:30.718900 [debug] [Thread-9 (]: Began compiling node model.tasty_bytes.raw_pos_truck
+[0m04:04:30.724053 [debug] [Thread-7 (]: Writing injected SQL for node "model.tasty_bytes.raw_pos_order_detail"
+[0m04:04:30.730868 [debug] [Thread-4 (]: Writing injected SQL for node "model.tasty_bytes.raw_pos_franchise"
+[0m04:04:30.735962 [debug] [Thread-5 (]: Writing injected SQL for node "model.tasty_bytes.raw_pos_location"
+[0m04:04:30.741124 [debug] [Thread-6 (]: Writing injected SQL for node "model.tasty_bytes.raw_pos_menu"
+[0m04:04:30.746570 [debug] [Thread-3 (]: Writing injected SQL for node "model.tasty_bytes.raw_pos_country"
+[0m04:04:30.751965 [debug] [Thread-8 (]: Writing injected SQL for node "model.tasty_bytes.raw_pos_order_header"
+[0m04:04:30.758966 [debug] [Thread-9 (]: Writing injected SQL for node "model.tasty_bytes.raw_pos_truck"
+[0m04:04:30.759940 [debug] [Thread-2 (]: Began executing node model.tasty_bytes.raw_customer_customer_loyalty
+[0m04:04:30.761141 [debug] [Thread-7 (]: Began executing node model.tasty_bytes.raw_pos_order_detail
+[0m04:04:30.762311 [debug] [Thread-4 (]: Began executing node model.tasty_bytes.raw_pos_franchise
+[0m04:04:30.763277 [debug] [Thread-5 (]: Began executing node model.tasty_bytes.raw_pos_location
+[0m04:04:30.764225 [debug] [Thread-6 (]: Began executing node model.tasty_bytes.raw_pos_menu
+[0m04:04:30.765235 [debug] [Thread-3 (]: Began executing node model.tasty_bytes.raw_pos_country
+[0m04:04:30.766240 [debug] [Thread-8 (]: Began executing node model.tasty_bytes.raw_pos_order_header
+[0m04:04:30.767464 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.raw_customer_customer_loyalty
+[0m04:04:30.768120 [debug] [Thread-9 (]: Began executing node model.tasty_bytes.raw_pos_truck
+[0m04:04:30.769097 [debug] [Thread-7 (]: Finished running node model.tasty_bytes.raw_pos_order_detail
+[0m04:04:30.770017 [debug] [Thread-4 (]: Finished running node model.tasty_bytes.raw_pos_franchise
+[0m04:04:30.770952 [debug] [Thread-5 (]: Finished running node model.tasty_bytes.raw_pos_location
+[0m04:04:30.771981 [debug] [Thread-6 (]: Finished running node model.tasty_bytes.raw_pos_menu
+[0m04:04:30.772965 [debug] [Thread-3 (]: Finished running node model.tasty_bytes.raw_pos_country
+[0m04:04:30.773892 [debug] [Thread-8 (]: Finished running node model.tasty_bytes.raw_pos_order_header
+[0m04:04:30.774599 [debug] [Thread-2 (]: Began running node operation.tasty_bytes.tasty_bytes-on-run-start-0
+[0m04:04:30.775801 [debug] [Thread-9 (]: Finished running node model.tasty_bytes.raw_pos_truck
+[0m04:04:30.777659 [debug] [Thread-7 (]: Began running node model.tasty_bytes.customer_loyalty_metrics
+[0m04:04:30.778422 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.raw_customer_customer_loyalty, now operation.tasty_bytes.tasty_bytes-on-run-start-0)
+[0m04:04:30.779517 [debug] [Thread-5 (]: Began running node model.tasty_bytes.orders
+[0m04:04:30.780210 [debug] [Thread-6 (]: Began running node model.tasty_bytes.sales_metrics_by_location
+[0m04:04:30.780936 [debug] [Thread-7 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.raw_pos_order_detail, now model.tasty_bytes.customer_loyalty_metrics)
+[0m04:04:30.781598 [debug] [Thread-2 (]: Began compiling node operation.tasty_bytes.tasty_bytes-on-run-start-0
+[0m04:04:30.782284 [debug] [Thread-5 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.raw_pos_location, now model.tasty_bytes.orders)
+[0m04:04:30.782920 [debug] [Thread-6 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.raw_pos_menu, now model.tasty_bytes.sales_metrics_by_location)
+[0m04:04:30.783611 [debug] [Thread-7 (]: Began compiling node model.tasty_bytes.customer_loyalty_metrics
+[0m04:04:30.789029 [debug] [Thread-2 (]: Using snowflake connection "operation.tasty_bytes.tasty_bytes-on-run-start-0"
+[0m04:04:30.789786 [debug] [Thread-5 (]: Began compiling node model.tasty_bytes.orders
+[0m04:04:30.790400 [debug] [Thread-6 (]: Began compiling node model.tasty_bytes.sales_metrics_by_location
+[0m04:04:30.795732 [debug] [Thread-7 (]: Writing injected SQL for node "model.tasty_bytes.customer_loyalty_metrics"
+[0m04:04:30.796545 [debug] [Thread-2 (]: On operation.tasty_bytes.tasty_bytes-on-run-start-0: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "operation.tasty_bytes.tasty_bytes-on-run-start-0"} */
+CREATE SCHEMA IF NOT EXISTS "SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT"
+[0m04:04:30.803202 [debug] [Thread-5 (]: Writing injected SQL for node "model.tasty_bytes.orders"
+[0m04:04:30.833729 [debug] [Thread-6 (]: Writing injected SQL for node "model.tasty_bytes.sales_metrics_by_location"
+[0m04:04:30.835455 [debug] [Thread-7 (]: Began executing node model.tasty_bytes.customer_loyalty_metrics
+[0m04:04:30.836818 [debug] [Thread-5 (]: Began executing node model.tasty_bytes.orders
+[0m04:04:30.837943 [debug] [Thread-7 (]: Finished running node model.tasty_bytes.customer_loyalty_metrics
+[0m04:04:30.838613 [debug] [Thread-6 (]: Began executing node model.tasty_bytes.sales_metrics_by_location
+[0m04:04:30.839618 [debug] [Thread-5 (]: Finished running node model.tasty_bytes.orders
+[0m04:04:30.840845 [debug] [Thread-6 (]: Finished running node model.tasty_bytes.sales_metrics_by_location
+[0m04:04:30.939665 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.105 seconds
+[0m04:04:30.941643 [info ] [Thread-2 (]: Setting up file format and S3 stage in "SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT"...
+[0m04:04:30.942745 [debug] [Thread-2 (]: Using snowflake connection "operation.tasty_bytes.tasty_bytes-on-run-start-0"
+[0m04:04:30.943462 [debug] [Thread-2 (]: On operation.tasty_bytes.tasty_bytes-on-run-start-0: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "operation.tasty_bytes.tasty_bytes-on-run-start-0"} */
+CREATE FILE FORMAT IF NOT EXISTS "SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".csv_ff TYPE = 'csv'
+[0m04:04:31.042248 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.098 seconds
+[0m04:04:31.044564 [debug] [Thread-2 (]: Using snowflake connection "operation.tasty_bytes.tasty_bytes-on-run-start-0"
+[0m04:04:31.045243 [debug] [Thread-2 (]: On operation.tasty_bytes.tasty_bytes-on-run-start-0: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "operation.tasty_bytes.tasty_bytes-on-run-start-0"} */
+CREATE STAGE IF NOT EXISTS "SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".s3load
+      COMMENT = 'Quickstarts S3 Stage Connection'
+      url = 's3://sfquickstarts/frostbyte_tastybytes/'
+      file_format = "SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".csv_ff
+[0m04:04:31.190473 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.144 seconds
+[0m04:04:31.192388 [info ] [Thread-2 (]: Creating and loading raw table: country
+[0m04:04:31.193712 [debug] [Thread-2 (]: Using snowflake connection "operation.tasty_bytes.tasty_bytes-on-run-start-0"
+[0m04:04:31.194347 [debug] [Thread-2 (]: On operation.tasty_bytes.tasty_bytes-on-run-start-0: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "operation.tasty_bytes.tasty_bytes-on-run-start-0"} */
+CREATE TABLE IF NOT EXISTS "SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".country (
+      country_id       NUMBER(18,0),
+      country          VARCHAR,
+      iso_currency     VARCHAR(3),
+      iso_country      VARCHAR(2),
+      city_id          NUMBER(19,0),
+      city             VARCHAR,
+      city_population  VARCHAR
+    )
+[0m04:04:31.421111 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.226 seconds
+[0m04:04:31.423346 [debug] [Thread-2 (]: Using snowflake connection "operation.tasty_bytes.tasty_bytes-on-run-start-0"
+[0m04:04:31.424010 [debug] [Thread-2 (]: On operation.tasty_bytes.tasty_bytes-on-run-start-0: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "operation.tasty_bytes.tasty_bytes-on-run-start-0"} */
+COPY INTO "SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".country FROM @"SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".s3load/raw_pos/country/
+[0m04:04:32.335316 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.910 seconds
+[0m04:04:32.337315 [info ] [Thread-2 (]: Creating and loading raw table: franchise
+[0m04:04:32.338645 [debug] [Thread-2 (]: Using snowflake connection "operation.tasty_bytes.tasty_bytes-on-run-start-0"
+[0m04:04:32.339391 [debug] [Thread-2 (]: On operation.tasty_bytes.tasty_bytes-on-run-start-0: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "operation.tasty_bytes.tasty_bytes-on-run-start-0"} */
+CREATE TABLE IF NOT EXISTS "SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".franchise (
+      franchise_id  NUMBER(38,0),
+      first_name    VARCHAR,
+      last_name     VARCHAR,
+      city          VARCHAR,
+      country       VARCHAR,
+      e_mail        VARCHAR,
+      phone_number  VARCHAR
+    )
+[0m04:04:32.550032 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.210 seconds
+[0m04:04:32.659500 [debug] [Thread-2 (]: Using snowflake connection "operation.tasty_bytes.tasty_bytes-on-run-start-0"
+[0m04:04:32.660237 [debug] [Thread-2 (]: On operation.tasty_bytes.tasty_bytes-on-run-start-0: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "operation.tasty_bytes.tasty_bytes-on-run-start-0"} */
+COPY INTO "SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".franchise FROM @"SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".s3load/raw_pos/franchise/
+[0m04:04:33.960539 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 1.299 seconds
+[0m04:04:33.962423 [info ] [Thread-2 (]: Creating and loading raw table: location
+[0m04:04:33.963820 [debug] [Thread-2 (]: Using snowflake connection "operation.tasty_bytes.tasty_bytes-on-run-start-0"
+[0m04:04:33.964501 [debug] [Thread-2 (]: On operation.tasty_bytes.tasty_bytes-on-run-start-0: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "operation.tasty_bytes.tasty_bytes-on-run-start-0"} */
+CREATE TABLE IF NOT EXISTS "SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".location (
+      location_id      NUMBER(19,0),
+      placekey         VARCHAR,
+      location         VARCHAR,
+      city             VARCHAR,
+      region           VARCHAR,
+      iso_country_code VARCHAR,
+      country          VARCHAR
+    )
+[0m04:04:34.234085 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.269 seconds
+[0m04:04:34.236281 [debug] [Thread-2 (]: Using snowflake connection "operation.tasty_bytes.tasty_bytes-on-run-start-0"
+[0m04:04:34.236959 [debug] [Thread-2 (]: On operation.tasty_bytes.tasty_bytes-on-run-start-0: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "operation.tasty_bytes.tasty_bytes-on-run-start-0"} */
+COPY INTO "SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".location FROM @"SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".s3load/raw_pos/location/
+[0m04:04:35.086294 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.849 seconds
+[0m04:04:35.088208 [info ] [Thread-2 (]: Creating and loading raw table: menu
+[0m04:04:35.089854 [debug] [Thread-2 (]: Using snowflake connection "operation.tasty_bytes.tasty_bytes-on-run-start-0"
+[0m04:04:35.090495 [debug] [Thread-2 (]: On operation.tasty_bytes.tasty_bytes-on-run-start-0: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "operation.tasty_bytes.tasty_bytes-on-run-start-0"} */
+CREATE TABLE IF NOT EXISTS "SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".menu (
+      menu_id                      NUMBER(19,0),
+      menu_type_id                 NUMBER(38,0),
+      menu_type                    VARCHAR,
+      truck_brand_name             VARCHAR,
+      menu_item_id                 NUMBER(38,0),
+      menu_item_name               VARCHAR,
+      item_category                VARCHAR,
+      item_subcategory             VARCHAR,
+      cost_of_goods_usd            NUMBER(38,4),
+      sale_price_usd               NUMBER(38,4),
+      menu_item_health_metrics_obj VARIANT
+    )
+[0m04:04:35.282077 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.191 seconds
+[0m04:04:35.284313 [debug] [Thread-2 (]: Using snowflake connection "operation.tasty_bytes.tasty_bytes-on-run-start-0"
+[0m04:04:35.284979 [debug] [Thread-2 (]: On operation.tasty_bytes.tasty_bytes-on-run-start-0: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "operation.tasty_bytes.tasty_bytes-on-run-start-0"} */
+COPY INTO "SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".menu FROM @"SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".s3load/raw_pos/menu/
+[0m04:04:35.956625 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.671 seconds
+[0m04:04:35.958469 [info ] [Thread-2 (]: Creating and loading raw table: truck
+[0m04:04:35.960176 [debug] [Thread-2 (]: Using snowflake connection "operation.tasty_bytes.tasty_bytes-on-run-start-0"
+[0m04:04:35.960862 [debug] [Thread-2 (]: On operation.tasty_bytes.tasty_bytes-on-run-start-0: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "operation.tasty_bytes.tasty_bytes-on-run-start-0"} */
+CREATE TABLE IF NOT EXISTS "SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".truck (
+      truck_id           NUMBER(38,0),
+      menu_type_id       NUMBER(38,0),
+      primary_city       VARCHAR,
+      region             VARCHAR,
+      iso_region         VARCHAR,
+      country            VARCHAR,
+      iso_country_code   VARCHAR,
+      franchise_flag     NUMBER(38,0),
+      year               NUMBER(38,0),
+      make               VARCHAR,
+      model              VARCHAR,
+      ev_flag            NUMBER(38,0),
+      franchise_id       NUMBER(38,0),
+      truck_opening_date DATE
+    )
+[0m04:04:36.162421 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.201 seconds
+[0m04:04:36.164558 [debug] [Thread-2 (]: Using snowflake connection "operation.tasty_bytes.tasty_bytes-on-run-start-0"
+[0m04:04:36.165259 [debug] [Thread-2 (]: On operation.tasty_bytes.tasty_bytes-on-run-start-0: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "operation.tasty_bytes.tasty_bytes-on-run-start-0"} */
+COPY INTO "SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".truck FROM @"SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".s3load/raw_pos/truck/
+[0m04:04:36.847331 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.681 seconds
+[0m04:04:36.849138 [info ] [Thread-2 (]: Creating and loading raw table: order_header
+[0m04:04:36.850741 [debug] [Thread-2 (]: Using snowflake connection "operation.tasty_bytes.tasty_bytes-on-run-start-0"
+[0m04:04:36.851472 [debug] [Thread-2 (]: On operation.tasty_bytes.tasty_bytes-on-run-start-0: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "operation.tasty_bytes.tasty_bytes-on-run-start-0"} */
+CREATE TABLE IF NOT EXISTS "SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".order_header (
+      order_id               NUMBER(38,0),
+      truck_id               NUMBER(38,0),
+      location_id            FLOAT,
+      customer_id            NUMBER(38,0),
+      discount_id            VARCHAR,
+      shift_id               NUMBER(38,0),
+      shift_start_time       TIME(9),
+      shift_end_time         TIME(9),
+      order_channel          VARCHAR,
+      order_ts               TIMESTAMP_NTZ(9),
+      served_ts              VARCHAR,
+      order_currency         VARCHAR(3),
+      order_amount           NUMBER(38,4),
+      order_tax_amount       VARCHAR,
+      order_discount_amount  VARCHAR,
+      order_total            NUMBER(38,4)
+    )
+[0m04:04:37.084753 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.232 seconds
+[0m04:04:37.086876 [debug] [Thread-2 (]: Using snowflake connection "operation.tasty_bytes.tasty_bytes-on-run-start-0"
+[0m04:04:37.087616 [debug] [Thread-2 (]: On operation.tasty_bytes.tasty_bytes-on-run-start-0: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "operation.tasty_bytes.tasty_bytes-on-run-start-0"} */
+COPY INTO "SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".order_header FROM @"SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".s3load/raw_pos/order_header/
+[0m04:06:20.477000 [debug] [Thread-2 (]: SQL status: SUCCESS 179 in 103.389 seconds
+[0m04:06:20.483111 [info ] [Thread-2 (]: Creating and loading raw table: order_detail
+[0m04:06:20.484458 [debug] [Thread-2 (]: Using snowflake connection "operation.tasty_bytes.tasty_bytes-on-run-start-0"
+[0m04:06:20.485026 [debug] [Thread-2 (]: On operation.tasty_bytes.tasty_bytes-on-run-start-0: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "operation.tasty_bytes.tasty_bytes-on-run-start-0"} */
+CREATE TABLE IF NOT EXISTS "SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".order_detail (
+      order_detail_id            NUMBER(38,0),
+      order_id                   NUMBER(38,0),
+      menu_item_id               NUMBER(38,0),
+      discount_id                VARCHAR,
+      line_number                NUMBER(38,0),
+      quantity                   NUMBER(5,0),
+      unit_price                 NUMBER(38,4),
+      price                      NUMBER(38,4),
+      order_item_discount_amount VARCHAR
+    )
+[0m04:06:20.705991 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.220 seconds
+[0m04:06:20.707955 [debug] [Thread-2 (]: Using snowflake connection "operation.tasty_bytes.tasty_bytes-on-run-start-0"
+[0m04:06:20.708563 [debug] [Thread-2 (]: On operation.tasty_bytes.tasty_bytes-on-run-start-0: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "operation.tasty_bytes.tasty_bytes-on-run-start-0"} */
+COPY INTO "SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".order_detail FROM @"SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".s3load/raw_pos/order_detail/
+[0m04:08:38.455663 [debug] [Thread-2 (]: SQL status: SUCCESS 270 in 137.746 seconds
+[0m04:08:38.464142 [info ] [Thread-2 (]: Creating and loading raw table: customer_loyalty
+[0m04:08:38.465628 [debug] [Thread-2 (]: Using snowflake connection "operation.tasty_bytes.tasty_bytes-on-run-start-0"
+[0m04:08:38.466232 [debug] [Thread-2 (]: On operation.tasty_bytes.tasty_bytes-on-run-start-0: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "operation.tasty_bytes.tasty_bytes-on-run-start-0"} */
+CREATE TABLE IF NOT EXISTS "SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".customer_loyalty (
+      customer_id        NUMBER(38,0),
+      first_name         VARCHAR,
+      last_name          VARCHAR,
+      city               VARCHAR,
+      country            VARCHAR,
+      postal_code        VARCHAR,
+      preferred_language VARCHAR,
+      gender             VARCHAR,
+      favourite_brand    VARCHAR,
+      marital_status     VARCHAR,
+      children_count     VARCHAR,
+      sign_up_date       DATE,
+      birthday_date      DATE,
+      e_mail             VARCHAR,
+      phone_number       VARCHAR
+    )
+[0m04:08:38.669530 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.203 seconds
+[0m04:08:38.671504 [debug] [Thread-2 (]: Using snowflake connection "operation.tasty_bytes.tasty_bytes-on-run-start-0"
+[0m04:08:38.672115 [debug] [Thread-2 (]: On operation.tasty_bytes.tasty_bytes-on-run-start-0: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "operation.tasty_bytes.tasty_bytes-on-run-start-0"} */
+COPY INTO "SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".customer_loyalty FROM @"SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".s3load/raw_customer/customer_loyalty/
+[0m04:08:40.897425 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 2.225 seconds
+[0m04:08:40.899230 [debug] [Thread-2 (]: Writing injected SQL for node "operation.tasty_bytes.tasty_bytes-on-run-start-0"
+[0m04:08:40.900116 [debug] [Thread-2 (]: Began executing node operation.tasty_bytes.tasty_bytes-on-run-start-0
+[0m04:08:40.900999 [debug] [Thread-2 (]: Finished running node operation.tasty_bytes.tasty_bytes-on-run-start-0
+[0m04:08:40.905117 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m04:08:40.905624 [debug] [Dummy-1   ]: Connection 'operation.tasty_bytes.tasty_bytes-on-run-start-0' was left open.
+[0m04:08:40.906121 [debug] [Dummy-1   ]: On operation.tasty_bytes.tasty_bytes-on-run-start-0: Close
+[0m04:08:40.906532 [debug] [Dummy-1   ]: Connection 'model.tasty_bytes.customer_loyalty_metrics' was properly closed.
+[0m04:08:40.906920 [debug] [Dummy-1   ]: Connection 'model.tasty_bytes.raw_pos_franchise' was properly closed.
+[0m04:08:40.907390 [debug] [Dummy-1   ]: Connection 'model.tasty_bytes.orders' was properly closed.
+[0m04:08:40.907781 [debug] [Dummy-1   ]: Connection 'model.tasty_bytes.sales_metrics_by_location' was properly closed.
+[0m04:08:40.908160 [debug] [Dummy-1   ]: Connection 'model.tasty_bytes.raw_pos_country' was properly closed.
+[0m04:08:40.908537 [debug] [Dummy-1   ]: Connection 'model.tasty_bytes.raw_pos_order_header' was properly closed.
+[0m04:08:40.908895 [debug] [Dummy-1   ]: Connection 'model.tasty_bytes.raw_pos_truck' was properly closed.
+[0m04:08:40.910760 [debug] [Dummy-1   ]: Command end result
+[0m04:08:40.935091 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m04:08:40.937466 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m04:08:40.945200 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m04:08:40.947300 [debug] [Dummy-1   ]: Resource report: {"command_name": "compile", "command_success": true, "command_wall_clock_time": 253.41617, "process_in_blocks": "0", "process_kernel_time": 1.18, "process_mem_max_rss": "543036", "process_out_blocks": "0", "process_user_time": 8.06}
+[0m04:08:40.947978 [debug] [Dummy-1   ]: Command `cli compile` succeeded at 04:08:40.947705 after 253.42 seconds
+[0m04:08:40.948551 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 04:12:59.448381 | 261dbc5a-2e25-4107-af2b-ad4d47f3948f ==============================
+[0m04:12:59.448381 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m04:12:59.449287 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': '/tmp/dbt/logs', 'fail_fast': 'False', 'profiles_dir': '/tmp/dbt_effective_profiles_m9_na88n', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'invocation_command': 'dbt ', 'send_anonymous_usage_stats': 'False'}
+[0m04:12:59.642357 [info ] [Dummy-1   ]: State adapter: dbt-state v0.0.0 is disabled
+[0m04:12:59.731961 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m04:13:00.273542 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m04:13:00.534167 [debug] [Dummy-1   ]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m04:13:00.534742 [debug] [Dummy-1   ]: Partial parsing enabled, no changes found, skipping parsing
+[0m04:13:00.716057 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m04:13:00.718267 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m04:13:00.770600 [info ] [Dummy-1   ]: Found 11 models, 1 operation, 478 macros
+[0m04:13:00.773051 [info ] [Dummy-1   ]: 
+[0m04:13:00.773609 [info ] [Dummy-1   ]: Concurrency: 8 threads (target='dev')
+[0m04:13:00.774113 [info ] [Dummy-1   ]: 
+[0m04:13:00.775050 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m04:13:00.781932 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_SNOWFLAKE_LEARNING_DB'
+[0m04:13:00.888262 [debug] [ThreadPool]: Using snowflake connection "list_SNOWFLAKE_LEARNING_DB"
+[0m04:13:00.888894 [debug] [ThreadPool]: On list_SNOWFLAKE_LEARNING_DB: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_SNOWFLAKE_LEARNING_DB"} */
+show terse schemas in database SNOWFLAKE_LEARNING_DB
+    limit 10000
+[0m04:13:00.889340 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m04:13:01.420854 [debug] [ThreadPool]: SQL status: SUCCESS 2 in 0.531 seconds
+[0m04:13:01.425980 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_SNOWFLAKE_LEARNING_DB_TASTY_BYTES_DBT'
+[0m04:13:01.439282 [debug] [ThreadPool]: Using snowflake connection "list_SNOWFLAKE_LEARNING_DB_TASTY_BYTES_DBT"
+[0m04:13:01.439876 [debug] [ThreadPool]: On list_SNOWFLAKE_LEARNING_DB_TASTY_BYTES_DBT: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_SNOWFLAKE_LEARNING_DB_TASTY_BYTES_DBT"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m04:13:01.440337 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m04:13:01.952443 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.512 seconds
+[0m04:13:01.957163 [debug] [ThreadPool]: Using snowflake connection "list_SNOWFLAKE_LEARNING_DB_TASTY_BYTES_DBT"
+[0m04:13:01.957754 [debug] [ThreadPool]: On list_SNOWFLAKE_LEARNING_DB_TASTY_BYTES_DBT: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_SNOWFLAKE_LEARNING_DB_TASTY_BYTES_DBT"} */
+show objects in SNOWFLAKE_LEARNING_DB.TASTY_BYTES_DBT
+    limit 10000
+    
+;
+[0m04:13:02.105769 [debug] [ThreadPool]: SQL status: SUCCESS 8 in 0.147 seconds
+[0m04:13:02.108693 [debug] [ThreadPool]: Using snowflake connection "list_SNOWFLAKE_LEARNING_DB_TASTY_BYTES_DBT"
+[0m04:13:02.109262 [debug] [ThreadPool]: On list_SNOWFLAKE_LEARNING_DB_TASTY_BYTES_DBT: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_SNOWFLAKE_LEARNING_DB_TASTY_BYTES_DBT"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m04:13:02.193165 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.083 seconds
+[0m04:13:02.218528 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m04:13:02.219254 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "master"} */
+CREATE SCHEMA IF NOT EXISTS "SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT"
+[0m04:13:02.219755 [debug] [Dummy-1   ]: Opening a new connection, currently in state init
+[0m04:13:02.770566 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.551 seconds
+[0m04:13:02.772298 [info ] [Dummy-1   ]: Setting up file format and S3 stage in "SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT"...
+[0m04:13:02.773259 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m04:13:02.773809 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "master"} */
+CREATE FILE FORMAT IF NOT EXISTS "SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".csv_ff TYPE = 'csv'
+[0m04:13:02.840523 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.066 seconds
+[0m04:13:02.842398 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m04:13:02.843237 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "master"} */
+CREATE STAGE IF NOT EXISTS "SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".s3load
+      COMMENT = 'Quickstarts S3 Stage Connection'
+      url = 's3://sfquickstarts/frostbyte_tastybytes/'
+      file_format = "SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".csv_ff
+[0m04:13:03.031401 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.187 seconds
+[0m04:13:03.033006 [info ] [Dummy-1   ]: Creating and loading raw table: country
+[0m04:13:03.034155 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m04:13:03.034691 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "master"} */
+CREATE TABLE IF NOT EXISTS "SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".country (
+      country_id       NUMBER(18,0),
+      country          VARCHAR,
+      iso_currency     VARCHAR(3),
+      iso_country      VARCHAR(2),
+      city_id          NUMBER(19,0),
+      city             VARCHAR,
+      city_population  VARCHAR
+    )
+[0m04:13:03.114676 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.079 seconds
+[0m04:13:03.116627 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m04:13:03.117197 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "master"} */
+COPY INTO "SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".country FROM @"SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".s3load/raw_pos/country/
+[0m04:13:03.765286 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.647 seconds
+[0m04:13:03.766875 [info ] [Dummy-1   ]: Creating and loading raw table: franchise
+[0m04:13:03.768063 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m04:13:03.768641 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "master"} */
+CREATE TABLE IF NOT EXISTS "SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".franchise (
+      franchise_id  NUMBER(38,0),
+      first_name    VARCHAR,
+      last_name     VARCHAR,
+      city          VARCHAR,
+      country       VARCHAR,
+      e_mail        VARCHAR,
+      phone_number  VARCHAR
+    )
+[0m04:13:03.834141 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.065 seconds
+[0m04:13:03.836086 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m04:13:03.836629 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "master"} */
+COPY INTO "SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".franchise FROM @"SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".s3load/raw_pos/franchise/
+[0m04:13:04.319347 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.482 seconds
+[0m04:13:04.320983 [info ] [Dummy-1   ]: Creating and loading raw table: location
+[0m04:13:04.322114 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m04:13:04.322655 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "master"} */
+CREATE TABLE IF NOT EXISTS "SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".location (
+      location_id      NUMBER(19,0),
+      placekey         VARCHAR,
+      location         VARCHAR,
+      city             VARCHAR,
+      region           VARCHAR,
+      iso_country_code VARCHAR,
+      country          VARCHAR
+    )
+[0m04:13:04.402098 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.079 seconds
+[0m04:13:04.403963 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m04:13:04.404520 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "master"} */
+COPY INTO "SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".location FROM @"SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".s3load/raw_pos/location/
+[0m04:13:04.836340 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.431 seconds
+[0m04:13:04.837878 [info ] [Dummy-1   ]: Creating and loading raw table: menu
+[0m04:13:04.839461 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m04:13:04.840003 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "master"} */
+CREATE TABLE IF NOT EXISTS "SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".menu (
+      menu_id                      NUMBER(19,0),
+      menu_type_id                 NUMBER(38,0),
+      menu_type                    VARCHAR,
+      truck_brand_name             VARCHAR,
+      menu_item_id                 NUMBER(38,0),
+      menu_item_name               VARCHAR,
+      item_category                VARCHAR,
+      item_subcategory             VARCHAR,
+      cost_of_goods_usd            NUMBER(38,4),
+      sale_price_usd               NUMBER(38,4),
+      menu_item_health_metrics_obj VARIANT
+    )
+[0m04:13:04.905578 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.065 seconds
+[0m04:13:04.907448 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m04:13:04.907982 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "master"} */
+COPY INTO "SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".menu FROM @"SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".s3load/raw_pos/menu/
+[0m04:13:05.416790 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.508 seconds
+[0m04:13:05.418378 [info ] [Dummy-1   ]: Creating and loading raw table: truck
+[0m04:13:05.419788 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m04:13:05.420376 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "master"} */
+CREATE TABLE IF NOT EXISTS "SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".truck (
+      truck_id           NUMBER(38,0),
+      menu_type_id       NUMBER(38,0),
+      primary_city       VARCHAR,
+      region             VARCHAR,
+      iso_region         VARCHAR,
+      country            VARCHAR,
+      iso_country_code   VARCHAR,
+      franchise_flag     NUMBER(38,0),
+      year               NUMBER(38,0),
+      make               VARCHAR,
+      model              VARCHAR,
+      ev_flag            NUMBER(38,0),
+      franchise_id       NUMBER(38,0),
+      truck_opening_date DATE
+    )
+[0m04:13:05.485064 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.064 seconds
+[0m04:13:05.486867 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m04:13:05.487489 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "master"} */
+COPY INTO "SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".truck FROM @"SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".s3load/raw_pos/truck/
+[0m04:13:05.981679 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.494 seconds
+[0m04:13:05.983355 [info ] [Dummy-1   ]: Creating and loading raw table: order_header
+[0m04:13:05.984810 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m04:13:05.985373 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "master"} */
+CREATE TABLE IF NOT EXISTS "SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".order_header (
+      order_id               NUMBER(38,0),
+      truck_id               NUMBER(38,0),
+      location_id            FLOAT,
+      customer_id            NUMBER(38,0),
+      discount_id            VARCHAR,
+      shift_id               NUMBER(38,0),
+      shift_start_time       TIME(9),
+      shift_end_time         TIME(9),
+      order_channel          VARCHAR,
+      order_ts               TIMESTAMP_NTZ(9),
+      served_ts              VARCHAR,
+      order_currency         VARCHAR(3),
+      order_amount           NUMBER(38,4),
+      order_tax_amount       VARCHAR,
+      order_discount_amount  VARCHAR,
+      order_total            NUMBER(38,4)
+    )
+[0m04:13:06.052303 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.066 seconds
+[0m04:13:06.054138 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m04:13:06.054671 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "master"} */
+COPY INTO "SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".order_header FROM @"SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".s3load/raw_pos/order_header/
+[0m04:13:06.620769 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.565 seconds
+[0m04:13:06.622279 [info ] [Dummy-1   ]: Creating and loading raw table: order_detail
+[0m04:13:06.623567 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m04:13:06.624096 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "master"} */
+CREATE TABLE IF NOT EXISTS "SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".order_detail (
+      order_detail_id            NUMBER(38,0),
+      order_id                   NUMBER(38,0),
+      menu_item_id               NUMBER(38,0),
+      discount_id                VARCHAR,
+      line_number                NUMBER(38,0),
+      quantity                   NUMBER(5,0),
+      unit_price                 NUMBER(38,4),
+      price                      NUMBER(38,4),
+      order_item_discount_amount VARCHAR
+    )
+[0m04:13:06.692619 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.068 seconds
+[0m04:13:06.694487 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m04:13:06.695133 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "master"} */
+COPY INTO "SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".order_detail FROM @"SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".s3load/raw_pos/order_detail/
+[0m04:13:07.298166 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.602 seconds
+[0m04:13:07.299865 [info ] [Dummy-1   ]: Creating and loading raw table: customer_loyalty
+[0m04:13:07.301221 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m04:13:07.301810 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "master"} */
+CREATE TABLE IF NOT EXISTS "SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".customer_loyalty (
+      customer_id        NUMBER(38,0),
+      first_name         VARCHAR,
+      last_name          VARCHAR,
+      city               VARCHAR,
+      country            VARCHAR,
+      postal_code        VARCHAR,
+      preferred_language VARCHAR,
+      gender             VARCHAR,
+      favourite_brand    VARCHAR,
+      marital_status     VARCHAR,
+      children_count     VARCHAR,
+      sign_up_date       DATE,
+      birthday_date      DATE,
+      e_mail             VARCHAR,
+      phone_number       VARCHAR
+    )
+[0m04:13:07.375240 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.072 seconds
+[0m04:13:07.377115 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m04:13:07.377673 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "master"} */
+COPY INTO "SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".customer_loyalty FROM @"SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".s3load/raw_customer/customer_loyalty/
+[0m04:13:07.879987 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.502 seconds
+[0m04:13:07.881550 [debug] [Dummy-1   ]: Writing injected SQL for node "operation.tasty_bytes.tasty_bytes-on-run-start-0"
+[0m04:13:07.887442 [info ] [Dummy-1   ]: 1 of 1 START hook: tasty_bytes.on-run-start.0 .................................. [RUN]
+[0m04:13:07.888198 [info ] [Dummy-1   ]: 1 of 1 OK hook: tasty_bytes.on-run-start.0 ..................................... [[32mOK[0m in 5.69s]
+[0m04:13:07.888685 [info ] [Dummy-1   ]: 
+[0m04:13:07.904978 [debug] [Thread-2 (]: Began running node model.tasty_bytes.raw_customer_customer_loyalty
+[0m04:13:07.905626 [debug] [Thread-3 (]: Began running node model.tasty_bytes.raw_pos_country
+[0m04:13:07.906213 [debug] [Thread-4 (]: Began running node model.tasty_bytes.raw_pos_franchise
+[0m04:13:07.907025 [debug] [Thread-5 (]: Began running node model.tasty_bytes.raw_pos_location
+[0m04:13:07.907657 [debug] [Thread-6 (]: Began running node model.tasty_bytes.raw_pos_menu
+[0m04:13:07.908244 [debug] [Thread-7 (]: Began running node model.tasty_bytes.raw_pos_order_detail
+[0m04:13:07.908911 [info ] [Thread-2 (]: 1 of 11 START sql view model TASTY_BYTES_DBT.raw_customer_customer_loyalty ..... [RUN]
+[0m04:13:07.909504 [debug] [Thread-8 (]: Began running node model.tasty_bytes.raw_pos_order_header
+[0m04:13:07.910030 [debug] [Thread-9 (]: Began running node model.tasty_bytes.raw_pos_truck
+[0m04:13:07.910688 [info ] [Thread-3 (]: 2 of 11 START sql view model TASTY_BYTES_DBT.raw_pos_country ................... [RUN]
+[0m04:13:07.911483 [info ] [Thread-4 (]: 3 of 11 START sql view model TASTY_BYTES_DBT.raw_pos_franchise ................. [RUN]
+[0m04:13:07.912196 [info ] [Thread-5 (]: 4 of 11 START sql view model TASTY_BYTES_DBT.raw_pos_location .................. [RUN]
+[0m04:13:07.912894 [info ] [Thread-6 (]: 5 of 11 START sql view model TASTY_BYTES_DBT.raw_pos_menu ...................... [RUN]
+[0m04:13:07.913557 [info ] [Thread-7 (]: 6 of 11 START sql view model TASTY_BYTES_DBT.raw_pos_order_detail .............. [RUN]
+[0m04:13:07.914284 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_SNOWFLAKE_LEARNING_DB_TASTY_BYTES_DBT, now model.tasty_bytes.raw_customer_customer_loyalty)
+[0m04:13:07.914936 [info ] [Thread-8 (]: 7 of 11 START sql view model TASTY_BYTES_DBT.raw_pos_order_header .............. [RUN]
+[0m04:13:07.915706 [info ] [Thread-9 (]: 8 of 11 START sql view model TASTY_BYTES_DBT.raw_pos_truck ..................... [RUN]
+[0m04:13:07.916441 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_SNOWFLAKE_LEARNING_DB, now model.tasty_bytes.raw_pos_country)
+[0m04:13:07.917145 [debug] [Thread-4 (]: Acquiring new snowflake connection 'model.tasty_bytes.raw_pos_franchise'
+[0m04:13:07.917796 [debug] [Thread-5 (]: Acquiring new snowflake connection 'model.tasty_bytes.raw_pos_location'
+[0m04:13:07.918448 [debug] [Thread-6 (]: Acquiring new snowflake connection 'model.tasty_bytes.raw_pos_menu'
+[0m04:13:07.919176 [debug] [Thread-7 (]: Acquiring new snowflake connection 'model.tasty_bytes.raw_pos_order_detail'
+[0m04:13:07.919746 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes.raw_customer_customer_loyalty
+[0m04:13:07.920416 [debug] [Thread-8 (]: Acquiring new snowflake connection 'model.tasty_bytes.raw_pos_order_header'
+[0m04:13:07.921054 [debug] [Thread-9 (]: Acquiring new snowflake connection 'model.tasty_bytes.raw_pos_truck'
+[0m04:13:07.921555 [debug] [Thread-3 (]: Began compiling node model.tasty_bytes.raw_pos_country
+[0m04:13:07.922100 [debug] [Thread-4 (]: Began compiling node model.tasty_bytes.raw_pos_franchise
+[0m04:13:07.922597 [debug] [Thread-5 (]: Began compiling node model.tasty_bytes.raw_pos_location
+[0m04:13:07.923183 [debug] [Thread-6 (]: Began compiling node model.tasty_bytes.raw_pos_menu
+[0m04:13:07.923718 [debug] [Thread-7 (]: Began compiling node model.tasty_bytes.raw_pos_order_detail
+[0m04:13:07.929952 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes.raw_customer_customer_loyalty"
+[0m04:13:07.930572 [debug] [Thread-8 (]: Began compiling node model.tasty_bytes.raw_pos_order_header
+[0m04:13:07.931168 [debug] [Thread-9 (]: Began compiling node model.tasty_bytes.raw_pos_truck
+[0m04:13:07.935518 [debug] [Thread-3 (]: Writing injected SQL for node "model.tasty_bytes.raw_pos_country"
+[0m04:13:07.939876 [debug] [Thread-4 (]: Writing injected SQL for node "model.tasty_bytes.raw_pos_franchise"
+[0m04:13:07.944405 [debug] [Thread-5 (]: Writing injected SQL for node "model.tasty_bytes.raw_pos_location"
+[0m04:13:07.950535 [debug] [Thread-6 (]: Writing injected SQL for node "model.tasty_bytes.raw_pos_menu"
+[0m04:13:07.954819 [debug] [Thread-7 (]: Writing injected SQL for node "model.tasty_bytes.raw_pos_order_detail"
+[0m04:13:07.959588 [debug] [Thread-8 (]: Writing injected SQL for node "model.tasty_bytes.raw_pos_order_header"
+[0m04:13:07.960295 [debug] [Thread-2 (]: Began executing node model.tasty_bytes.raw_customer_customer_loyalty
+[0m04:13:07.964435 [debug] [Thread-9 (]: Writing injected SQL for node "model.tasty_bytes.raw_pos_truck"
+[0m04:13:07.965615 [debug] [Thread-3 (]: Began executing node model.tasty_bytes.raw_pos_country
+[0m04:13:07.966416 [debug] [Thread-4 (]: Began executing node model.tasty_bytes.raw_pos_franchise
+[0m04:13:07.967159 [debug] [Thread-5 (]: Began executing node model.tasty_bytes.raw_pos_location
+[0m04:13:07.967984 [debug] [Thread-6 (]: Began executing node model.tasty_bytes.raw_pos_menu
+[0m04:13:07.968819 [debug] [Thread-7 (]: Began executing node model.tasty_bytes.raw_pos_order_detail
+[0m04:13:07.985700 [debug] [Thread-8 (]: Began executing node model.tasty_bytes.raw_pos_order_header
+[0m04:13:08.012899 [debug] [Thread-2 (]: Writing runtime sql for node "model.tasty_bytes.raw_customer_customer_loyalty"
+[0m04:13:08.019377 [debug] [Thread-3 (]: Writing runtime sql for node "model.tasty_bytes.raw_pos_country"
+[0m04:13:08.020023 [debug] [Thread-9 (]: Began executing node model.tasty_bytes.raw_pos_truck
+[0m04:13:08.024320 [debug] [Thread-4 (]: Writing runtime sql for node "model.tasty_bytes.raw_pos_franchise"
+[0m04:13:08.028355 [debug] [Thread-5 (]: Writing runtime sql for node "model.tasty_bytes.raw_pos_location"
+[0m04:13:08.032406 [debug] [Thread-6 (]: Writing runtime sql for node "model.tasty_bytes.raw_pos_menu"
+[0m04:13:08.037618 [debug] [Thread-7 (]: Writing runtime sql for node "model.tasty_bytes.raw_pos_order_detail"
+[0m04:13:08.041750 [debug] [Thread-8 (]: Writing runtime sql for node "model.tasty_bytes.raw_pos_order_header"
+[0m04:13:08.046585 [debug] [Thread-9 (]: Writing runtime sql for node "model.tasty_bytes.raw_pos_truck"
+[0m04:13:08.047862 [debug] [Thread-2 (]: Using snowflake connection "model.tasty_bytes.raw_customer_customer_loyalty"
+[0m04:13:08.048745 [debug] [Thread-3 (]: Using snowflake connection "model.tasty_bytes.raw_pos_country"
+[0m04:13:08.049927 [debug] [Thread-4 (]: Using snowflake connection "model.tasty_bytes.raw_pos_franchise"
+[0m04:13:08.050775 [debug] [Thread-5 (]: Using snowflake connection "model.tasty_bytes.raw_pos_location"
+[0m04:13:08.051930 [debug] [Thread-6 (]: Using snowflake connection "model.tasty_bytes.raw_pos_menu"
+[0m04:13:08.053016 [debug] [Thread-7 (]: Using snowflake connection "model.tasty_bytes.raw_pos_order_detail"
+[0m04:13:08.054053 [debug] [Thread-8 (]: Using snowflake connection "model.tasty_bytes.raw_pos_order_header"
+[0m04:13:08.054714 [debug] [Thread-2 (]: On model.tasty_bytes.raw_customer_customer_loyalty: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.raw_customer_customer_loyalty"} */
+create or replace   view SNOWFLAKE_LEARNING_DB.TASTY_BYTES_DBT.raw_customer_customer_loyalty
+  
+   as (
+    SELECT * FROM "SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".customer_loyalty
+  );
+[0m04:13:08.055619 [debug] [Thread-9 (]: Using snowflake connection "model.tasty_bytes.raw_pos_truck"
+[0m04:13:08.056165 [debug] [Thread-3 (]: On model.tasty_bytes.raw_pos_country: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.raw_pos_country"} */
+create or replace   view SNOWFLAKE_LEARNING_DB.TASTY_BYTES_DBT.raw_pos_country
+  
+   as (
+    SELECT * FROM "SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".country
+  );
+[0m04:13:08.056700 [debug] [Thread-4 (]: On model.tasty_bytes.raw_pos_franchise: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.raw_pos_franchise"} */
+create or replace   view SNOWFLAKE_LEARNING_DB.TASTY_BYTES_DBT.raw_pos_franchise
+  
+   as (
+    SELECT * FROM "SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".franchise
+  );
+[0m04:13:08.057250 [debug] [Thread-5 (]: On model.tasty_bytes.raw_pos_location: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.raw_pos_location"} */
+create or replace   view SNOWFLAKE_LEARNING_DB.TASTY_BYTES_DBT.raw_pos_location
+  
+   as (
+    SELECT * FROM "SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".location
+  );
+[0m04:13:08.057766 [debug] [Thread-6 (]: On model.tasty_bytes.raw_pos_menu: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.raw_pos_menu"} */
+create or replace   view SNOWFLAKE_LEARNING_DB.TASTY_BYTES_DBT.raw_pos_menu
+  
+   as (
+    SELECT * FROM "SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".menu
+  );
+[0m04:13:08.058280 [debug] [Thread-7 (]: On model.tasty_bytes.raw_pos_order_detail: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.raw_pos_order_detail"} */
+create or replace   view SNOWFLAKE_LEARNING_DB.TASTY_BYTES_DBT.raw_pos_order_detail
+  
+   as (
+    SELECT * FROM "SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".order_detail
+  );
+[0m04:13:08.058784 [debug] [Thread-8 (]: On model.tasty_bytes.raw_pos_order_header: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.raw_pos_order_header"} */
+create or replace   view SNOWFLAKE_LEARNING_DB.TASTY_BYTES_DBT.raw_pos_order_header
+  
+   as (
+    SELECT * FROM "SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".order_header
+  );
+[0m04:13:08.059832 [debug] [Thread-9 (]: On model.tasty_bytes.raw_pos_truck: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.raw_pos_truck"} */
+create or replace   view SNOWFLAKE_LEARNING_DB.TASTY_BYTES_DBT.raw_pos_truck
+  
+   as (
+    SELECT * FROM "SNOWFLAKE_LEARNING_DB"."TASTY_BYTES_DBT".truck
+  );
+[0m04:13:08.060753 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m04:13:08.061351 [debug] [Thread-5 (]: Opening a new connection, currently in state init
+[0m04:13:08.061887 [debug] [Thread-6 (]: Opening a new connection, currently in state init
+[0m04:13:08.062399 [debug] [Thread-7 (]: Opening a new connection, currently in state init
+[0m04:13:08.062889 [debug] [Thread-8 (]: Opening a new connection, currently in state init
+[0m04:13:08.063464 [debug] [Thread-9 (]: Opening a new connection, currently in state init
+[0m04:13:08.337625 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.278 seconds
+[0m04:13:08.363874 [info ] [Thread-2 (]: 1 of 11 OK created sql view model TASTY_BYTES_DBT.raw_customer_customer_loyalty  [[32mSUCCESS 1[0m in 0.45s]
+[0m04:13:08.364755 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.raw_customer_customer_loyalty
+[0m04:13:08.378106 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.317 seconds
+[0m04:13:08.381641 [info ] [Thread-3 (]: 2 of 11 OK created sql view model TASTY_BYTES_DBT.raw_pos_country .............. [[32mSUCCESS 1[0m in 0.46s]
+[0m04:13:08.382389 [debug] [Thread-3 (]: Finished running node model.tasty_bytes.raw_pos_country
+[0m04:13:08.732698 [debug] [Thread-9 (]: SQL status: SUCCESS 1 in 0.669 seconds
+[0m04:13:08.733498 [debug] [Thread-7 (]: SQL status: SUCCESS 1 in 0.671 seconds
+[0m04:13:08.734227 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.673 seconds
+[0m04:13:08.736961 [info ] [Thread-9 (]: 8 of 11 OK created sql view model TASTY_BYTES_DBT.raw_pos_truck ................ [[32mSUCCESS 1[0m in 0.82s]
+[0m04:13:08.739478 [info ] [Thread-7 (]: 6 of 11 OK created sql view model TASTY_BYTES_DBT.raw_pos_order_detail ......... [[32mSUCCESS 1[0m in 0.82s]
+[0m04:13:08.742349 [info ] [Thread-5 (]: 4 of 11 OK created sql view model TASTY_BYTES_DBT.raw_pos_location ............. [[32mSUCCESS 1[0m in 0.82s]
+[0m04:13:08.743164 [debug] [Thread-9 (]: Finished running node model.tasty_bytes.raw_pos_truck
+[0m04:13:08.743844 [debug] [Thread-7 (]: Finished running node model.tasty_bytes.raw_pos_order_detail
+[0m04:13:08.744515 [debug] [Thread-5 (]: Finished running node model.tasty_bytes.raw_pos_location
+[0m04:13:08.750926 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 0.690 seconds
+[0m04:13:08.753565 [info ] [Thread-4 (]: 3 of 11 OK created sql view model TASTY_BYTES_DBT.raw_pos_franchise ............ [[32mSUCCESS 1[0m in 0.84s]
+[0m04:13:08.754352 [debug] [Thread-8 (]: SQL status: SUCCESS 1 in 0.691 seconds
+[0m04:13:08.755071 [debug] [Thread-4 (]: Finished running node model.tasty_bytes.raw_pos_franchise
+[0m04:13:08.757460 [info ] [Thread-8 (]: 7 of 11 OK created sql view model TASTY_BYTES_DBT.raw_pos_order_header ......... [[32mSUCCESS 1[0m in 0.84s]
+[0m04:13:08.758236 [debug] [Thread-6 (]: SQL status: SUCCESS 1 in 0.696 seconds
+[0m04:13:08.759324 [debug] [Thread-8 (]: Finished running node model.tasty_bytes.raw_pos_order_header
+[0m04:13:08.761724 [info ] [Thread-6 (]: 5 of 11 OK created sql view model TASTY_BYTES_DBT.raw_pos_menu ................. [[32mSUCCESS 1[0m in 0.84s]
+[0m04:13:08.762787 [debug] [Thread-2 (]: Began running node model.tasty_bytes.customer_loyalty_metrics
+[0m04:13:08.763412 [debug] [Thread-3 (]: Began running node model.tasty_bytes.sales_metrics_by_location
+[0m04:13:08.764036 [debug] [Thread-6 (]: Finished running node model.tasty_bytes.raw_pos_menu
+[0m04:13:08.764744 [info ] [Thread-2 (]: 9 of 11 START sql table model TASTY_BYTES_DBT.customer_loyalty_metrics ......... [RUN]
+[0m04:13:08.765413 [info ] [Thread-3 (]: 10 of 11 START python table model TASTY_BYTES_DBT.sales_metrics_by_location .... [RUN]
+[0m04:13:08.766434 [debug] [Thread-7 (]: Began running node model.tasty_bytes.orders
+[0m04:13:08.767168 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.raw_customer_customer_loyalty, now model.tasty_bytes.customer_loyalty_metrics)
+[0m04:13:08.767787 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.raw_pos_country, now model.tasty_bytes.sales_metrics_by_location)
+[0m04:13:08.768451 [info ] [Thread-7 (]: 11 of 11 START sql table model TASTY_BYTES_DBT.orders .......................... [RUN]
+[0m04:13:08.769035 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes.customer_loyalty_metrics
+[0m04:13:08.769572 [debug] [Thread-3 (]: Began compiling node model.tasty_bytes.sales_metrics_by_location
+[0m04:13:08.770204 [debug] [Thread-7 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.raw_pos_order_detail, now model.tasty_bytes.orders)
+[0m04:13:08.776286 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes.customer_loyalty_metrics"
+[0m04:13:08.801312 [debug] [Thread-3 (]: Writing injected SQL for node "model.tasty_bytes.sales_metrics_by_location"
+[0m04:13:08.801938 [debug] [Thread-7 (]: Began compiling node model.tasty_bytes.orders
+[0m04:13:08.803038 [debug] [Thread-2 (]: Began executing node model.tasty_bytes.customer_loyalty_metrics
+[0m04:13:08.808873 [debug] [Thread-7 (]: Writing injected SQL for node "model.tasty_bytes.orders"
+[0m04:13:08.809518 [debug] [Thread-3 (]: Began executing node model.tasty_bytes.sales_metrics_by_location
+[0m04:13:08.835998 [debug] [Thread-2 (]: Writing runtime sql for node "model.tasty_bytes.customer_loyalty_metrics"
+[0m04:13:08.844260 [debug] [Thread-3 (]: Writing runtime python for node "model.tasty_bytes.sales_metrics_by_location"
+[0m04:13:08.845034 [debug] [Thread-7 (]: Began executing node model.tasty_bytes.orders
+[0m04:13:08.847146 [debug] [Thread-2 (]: Using snowflake connection "model.tasty_bytes.customer_loyalty_metrics"
+[0m04:13:08.851612 [debug] [Thread-7 (]: Writing runtime sql for node "model.tasty_bytes.orders"
+[0m04:13:08.854130 [debug] [Thread-3 (]: Using snowflake connection "model.tasty_bytes.sales_metrics_by_location"
+[0m04:13:08.854750 [debug] [Thread-2 (]: On model.tasty_bytes.customer_loyalty_metrics: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.customer_loyalty_metrics"} */
+create or replace transient table SNOWFLAKE_LEARNING_DB.TASTY_BYTES_DBT.customer_loyalty_metrics
+         as
+        (SELECT
+    cl.customer_id,
+    cl.city,
+    cl.country,
+    cl.first_name,
+    cl.last_name,
+    cl.phone_number,
+    cl.e_mail,
+    SUM(oh.order_total) AS total_sales,
+    ARRAY_AGG(DISTINCT oh.location_id) AS visited_location_ids_array
+FROM SNOWFLAKE_LEARNING_DB.TASTY_BYTES_DBT.raw_customer_customer_loyalty cl
+JOIN SNOWFLAKE_LEARNING_DB.TASTY_BYTES_DBT.raw_pos_order_header oh
+ON cl.customer_id = oh.customer_id
+GROUP BY cl.customer_id, cl.city, cl.country, cl.first_name,
+cl.last_name, cl.phone_number, cl.e_mail
+        );
+[0m04:13:08.856068 [debug] [Thread-3 (]: On model.tasty_bytes.sales_metrics_by_location: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.sales_metrics_by_location"} */
+WITH sales_metrics_by_location__dbt_sp AS PROCEDURE ()
+
+RETURNS STRING
+LANGUAGE PYTHON
+RUNTIME_VERSION = '3.9'
+PACKAGES = ('snowflake-snowpark-python')
+
+
+
+HANDLER = 'main'
+EXECUTE AS CALLER
+AS
+$$
+
+
+
+  
+    
+    
+from snowflake.snowpark.functions import col, lit, concat, count, sum as sum_, coalesce
+
+def model(dbt, session):
+    """
+    This model demonstrates basic Snowpark transformations using dbt Python models.
+    It joins location data with trucks and aggregates metrics by location.
+    Uses raw_pos models as sources instead of tb_101 directly.
+    """
+    # Get tables using dbt's ref function to reference the raw_pos models
+    locations_df = dbt.ref('raw_pos_location')
+    trucks_df = dbt.ref('raw_pos_truck')
+    orders_df = dbt.ref('raw_pos_order_header')
+
+    # Join locations with trucks to get truck counts by location
+    location_trucks = (
+        trucks_df
+        .join(
+            locations_df,
+            trucks_df["PRIMARY_CITY"] == locations_df["CITY"],
+            "inner"
+        )
+        # Use simple column names and case-insensitive approach
+        .select(
+            locations_df["LOCATION_ID"],
+            locations_df["LOCATION"],
+            locations_df["CITY"],
+            trucks_df["TRUCK_ID"]
+        )
+        .groupBy("LOCATION_ID", "LOCATION", "CITY")
+        .agg(count("TRUCK_ID").alias("TRUCK_COUNT"))
+    )
+
+    # Join with order data to get sales metrics
+    location_metrics = (
+        orders_df
+        .join(locations_df, "LOCATION_ID", "inner")
+        .groupBy("LOCATION_ID")
+        .agg(
+            sum_("ORDER_TOTAL").alias("TOTAL_SALES"),
+            sum_("ORDER_AMOUNT").alias("TOTAL_AMOUNT"),
+            sum_("ORDER_TAX_AMOUNT").alias("TOTAL_TAX")
+        )
+    )
+
+    # Create a more simplified final version
+    joined_df = location_trucks.join(location_metrics, "LOCATION_ID", "left")
+
+    # Add the calculated columns after join to avoid column reference issues
+    final_df = (
+        joined_df
+        .select(
+            col("LOCATION_ID"),
+            col("LOCATION"),
+            col("CITY"),
+            col("TRUCK_COUNT"),
+            # Use coalesce instead of fillna for Column objects
+            coalesce(col("TOTAL_SALES"), lit(0)).alias("TOTAL_SALES"),
+            coalesce(col("TOTAL_AMOUNT"), lit(0)).alias("TOTAL_AMOUNT"),
+            coalesce(col("TOTAL_TAX"), lit(0)).alias("TOTAL_TAX")
+        )
+    )
+
+    # Add the full location description as a separate step
+    final_with_desc = (
+        final_df
+        .withColumn(
+            "LOCATION_DESCRIPTION",
+            concat(
+                col("CITY"),
+                lit(" (Trucks: "),
+                col("TRUCK_COUNT").cast("string"),
+                lit(")")
+            )
+        )
+    )
+
+    # Return the final dataframe
+    return final_with_desc
+
+
+# This part is user provided model code
+# you will need to copy the next section to run the code
+# COMMAND ----------
+# this part is dbt logic for get ref work, do not modify
+
+def ref(*args, **kwargs):
+    refs = {"raw_pos_location": "SNOWFLAKE_LEARNING_DB.TASTY_BYTES_DBT.raw_pos_location", "raw_pos_order_header": "SNOWFLAKE_LEARNING_DB.TASTY_BYTES_DBT.raw_pos_order_header", "raw_pos_truck": "SNOWFLAKE_LEARNING_DB.TASTY_BYTES_DBT.raw_pos_truck"}
+    key = '.'.join(args)
+    version = kwargs.get("v") or kwargs.get("version")
+    if version:
+        key += f".v{version}"
+    dbt_load_df_function = kwargs.get("dbt_load_df_function")
+    return dbt_load_df_function(refs[key])
+
+
+def source(*args, dbt_load_df_function):
+    sources = {}
+    key = '.'.join(args)
+    return dbt_load_df_function(sources[key])
+
+
+config_dict = {}
+
+
+class config:
+    def __init__(self, *args, **kwargs):
+        pass
+
+    @staticmethod
+    def get(key, default=None):
+        return config_dict.get(key, default)
+
+class this:
+    """dbt.this() or dbt.this.identifier"""
+    database = "SNOWFLAKE_LEARNING_DB"
+    schema = "TASTY_BYTES_DBT"
+    identifier = "sales_metrics_by_location"
+    
+    def __repr__(self):
+        return 'SNOWFLAKE_LEARNING_DB.TASTY_BYTES_DBT.sales_metrics_by_location'
+
+
+class dbtObj:
+    def __init__(self, load_df_function) -> None:
+        self.source = lambda *args: source(*args, dbt_load_df_function=load_df_function)
+        self.ref = lambda *args, **kwargs: ref(*args, **kwargs, dbt_load_df_function=load_df_function)
+        self.config = config
+        self.this = this()
+        self.is_incremental = False
+
+# COMMAND ----------
+
+
+
+def materialize(session, df, target_relation):
+    # make sure pandas exists
+    import importlib.util
+    package_name = 'pandas'
+    if importlib.util.find_spec(package_name):
+        import pandas
+        if isinstance(df, pandas.core.frame.DataFrame):
+          session.use_database(target_relation.database)
+          session.use_schema(target_relation.schema)
+          # session.write_pandas does not have overwrite function
+          df = session.createDataFrame(df)
+    
+    df.write.mode("overwrite").save_as_table('SNOWFLAKE_LEARNING_DB.TASTY_BYTES_DBT.sales_metrics_by_location', table_type='transient')
+
+def main(session):
+    dbt = dbtObj(session.table)
+    df = model(dbt, session)
+    materialize(session, df, dbt.this)
+    return "OK"
+
+  
+$$
+CALL sales_metrics_by_location__dbt_sp();
+[0m04:13:08.858448 [debug] [Thread-7 (]: Using snowflake connection "model.tasty_bytes.orders"
+[0m04:13:08.859762 [debug] [Thread-7 (]: On model.tasty_bytes.orders: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.orders"} */
+create or replace transient table SNOWFLAKE_LEARNING_DB.TASTY_BYTES_DBT.orders
+         as
+        (SELECT
+    oh.order_id,
+    oh.truck_id,
+    oh.order_ts,
+    od.order_detail_id,
+    od.line_number,
+    m.truck_brand_name,
+    m.menu_type,
+    t.primary_city,
+    t.region,
+    t.country,
+    t.franchise_flag,
+    t.franchise_id,
+    f.first_name AS franchisee_first_name,
+    f.last_name AS franchisee_last_name,
+    l.location_id,
+    cl.customer_id,
+    cl.first_name,
+    cl.last_name,
+    cl.e_mail,
+    cl.phone_number,
+    cl.children_count,
+    cl.gender,
+    cl.marital_status,
+    od.menu_item_id,
+    m.menu_item_name,
+    od.quantity,
+    od.unit_price,
+    od.price,
+    oh.order_amount,
+    oh.order_tax_amount,
+    oh.order_discount_amount,
+    oh.order_total
+FROM SNOWFLAKE_LEARNING_DB.TASTY_BYTES_DBT.raw_pos_order_detail od
+JOIN SNOWFLAKE_LEARNING_DB.TASTY_BYTES_DBT.raw_pos_order_header oh
+    ON od.order_id = oh.order_id
+JOIN SNOWFLAKE_LEARNING_DB.TASTY_BYTES_DBT.raw_pos_truck t
+    ON oh.truck_id = t.truck_id
+JOIN SNOWFLAKE_LEARNING_DB.TASTY_BYTES_DBT.raw_pos_menu m
+    ON od.menu_item_id = m.menu_item_id
+JOIN SNOWFLAKE_LEARNING_DB.TASTY_BYTES_DBT.raw_pos_franchise f
+    ON t.franchise_id = f.franchise_id
+JOIN SNOWFLAKE_LEARNING_DB.TASTY_BYTES_DBT.raw_pos_location l
+    ON oh.location_id = l.location_id
+LEFT JOIN SNOWFLAKE_LEARNING_DB.TASTY_BYTES_DBT.raw_customer_customer_loyalty cl
+    ON oh.customer_id = cl.customer_id
+        );
+[0m04:13:25.440980 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 16.582 seconds
+[0m04:13:25.444401 [info ] [Thread-2 (]: 9 of 11 OK created sql table model TASTY_BYTES_DBT.customer_loyalty_metrics .... [[32mSUCCESS 1[0m in 16.68s]
+[0m04:13:25.446159 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.customer_loyalty_metrics
+[0m04:13:28.113317 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 19.254 seconds
+[0m04:13:28.124475 [info ] [Thread-3 (]: 10 of 11 OK created python table model TASTY_BYTES_DBT.sales_metrics_by_location  [[32mSUCCESS 1[0m in 19.36s]
+[0m04:13:28.125674 [debug] [Thread-3 (]: Finished running node model.tasty_bytes.sales_metrics_by_location
+[0m04:18:07.000272 [debug] [Thread-7 (]: SQL status: SUCCESS 1 in 298.140 seconds
+[0m04:18:07.002908 [info ] [Thread-7 (]: 11 of 11 OK created sql table model TASTY_BYTES_DBT.orders ..................... [[32mSUCCESS 1[0m in 298.23s]
+[0m04:18:07.003704 [debug] [Thread-7 (]: Finished running node model.tasty_bytes.orders
+[0m04:18:07.008483 [debug] [Dummy-1   ]: Connection 'master' was left open.
+[0m04:18:07.009359 [debug] [Dummy-1   ]: On master: Close
+[0m04:18:07.009892 [debug] [Dummy-1   ]: Connection 'model.tasty_bytes.sales_metrics_by_location' was left open.
+[0m04:18:07.010349 [debug] [Dummy-1   ]: On model.tasty_bytes.sales_metrics_by_location: Close
+[0m04:18:07.010783 [debug] [Dummy-1   ]: Connection 'model.tasty_bytes.customer_loyalty_metrics' was left open.
+[0m04:18:07.011278 [debug] [Dummy-1   ]: On model.tasty_bytes.customer_loyalty_metrics: Close
+[0m04:18:07.011690 [debug] [Dummy-1   ]: Connection 'model.tasty_bytes.raw_pos_franchise' was left open.
+[0m04:18:07.012120 [debug] [Dummy-1   ]: On model.tasty_bytes.raw_pos_franchise: Close
+[0m04:18:07.012550 [debug] [Dummy-1   ]: Connection 'model.tasty_bytes.raw_pos_location' was left open.
+[0m04:18:07.012978 [debug] [Dummy-1   ]: On model.tasty_bytes.raw_pos_location: Close
+[0m04:18:07.013359 [debug] [Dummy-1   ]: Connection 'model.tasty_bytes.raw_pos_menu' was left open.
+[0m04:18:07.013766 [debug] [Dummy-1   ]: On model.tasty_bytes.raw_pos_menu: Close
+[0m04:18:07.014163 [debug] [Dummy-1   ]: Connection 'model.tasty_bytes.orders' was left open.
+[0m04:18:07.014564 [debug] [Dummy-1   ]: On model.tasty_bytes.orders: Close
+[0m04:18:07.014940 [debug] [Dummy-1   ]: Connection 'model.tasty_bytes.raw_pos_order_header' was left open.
+[0m04:18:07.015431 [debug] [Dummy-1   ]: On model.tasty_bytes.raw_pos_order_header: Close
+[0m04:18:07.015856 [debug] [Dummy-1   ]: Connection 'model.tasty_bytes.raw_pos_truck' was left open.
+[0m04:18:07.016275 [debug] [Dummy-1   ]: On model.tasty_bytes.raw_pos_truck: Close
+[0m04:18:07.016863 [info ] [Dummy-1   ]: 
+[0m04:18:07.017319 [info ] [Dummy-1   ]: Finished running 1 project hook, 3 table models, 8 view models in 0 hours 5 minutes and 6.24 seconds (306.24s).
+[0m04:18:07.019379 [debug] [Dummy-1   ]: Command end result
+[0m04:18:07.043484 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m04:18:07.045870 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m04:18:07.052647 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m04:18:07.053165 [info ] [Dummy-1   ]: 
+[0m04:18:07.053752 [info ] [Dummy-1   ]: [32mCompleted successfully[0m
+[0m04:18:07.054207 [info ] [Dummy-1   ]: 
+[0m04:18:07.054670 [info ] [Dummy-1   ]: Done. PASS=12 WARN=0 ERROR=0 SKIP=0 TOTAL=12
+[0m04:18:07.057645 [debug] [Dummy-1   ]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 307.68527, "process_in_blocks": "0", "process_kernel_time": 1.17, "process_mem_max_rss": "483600", "process_out_blocks": "0", "process_user_time": 7.67}
+[0m04:18:07.058286 [debug] [Dummy-1   ]: Command `cli run` succeeded at 04:18:07.058027 after 307.69 seconds
+[0m04:18:07.058803 [debug] [Dummy-1   ]: Flushing usage events

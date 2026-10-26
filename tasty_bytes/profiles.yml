@@ -1,0 +1,10 @@
+tasty_bytes:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      role: ACCOUNTADMIN
+      warehouse: COMPUTE_WH
+      database: SNOWFLAKE_LEARNING_DB
+      schema: TASTY_BYTES_DBT
+      threads: 8
